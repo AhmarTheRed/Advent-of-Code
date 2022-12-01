@@ -26,8 +26,7 @@ public class Day1
 
         var orderedElfCaloricTotals = elfCaloricTotals.OrderByDescending(t => t).ToList();
 
-        for (var i = 0; i < orderedElfCaloricTotals.Count && i < 3; i++)
-            yield return orderedElfCaloricTotals[i];
+        return orderedElfCaloricTotals.Take(3);
     }
 
     public int GetTop3MostCaloriesTotal()
