@@ -22,7 +22,7 @@ public class Day1Tests
         //Assert
         actual.Should().Be(24000);
     }
-    
+
     [Fact]
     public void GetTop3MostCalories_WithValidInput_ReturnsTop3MostCalories()
     {
@@ -41,7 +41,7 @@ public class Day1Tests
         //Assert
         actual.Should().BeEquivalentTo(expected);
     }
-    
+
     [Fact]
     public void GetTop3MostCaloriesTotal_WithValidInput_ReturnsSumOfTop3MostCalories()
     {
