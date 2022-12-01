@@ -6,7 +6,8 @@ public class InputFileServiceTests
     public void GetInput_WithValidFilePath_ReturnsInput()
     {
         //Arrange
-        var expected = "1000\n2000\n3000\n\n4000\n\n5000\n6000\n\n7000\n8000\n9000\n\n10000\n";
+        var expected =
+            $"1000{Environment.NewLine}2000{Environment.NewLine}3000{Environment.NewLine}{Environment.NewLine}4000{Environment.NewLine}{Environment.NewLine}5000{Environment.NewLine}6000{Environment.NewLine}{Environment.NewLine}7000{Environment.NewLine}8000{Environment.NewLine}9000{Environment.NewLine}{Environment.NewLine}10000{Environment.NewLine}";
         IInputFileService inputFileService = new InputFileService();
 
         //Act

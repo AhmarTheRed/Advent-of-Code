@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2022;
 public class Day1
 {
     private const string InputFileName = "Day1";
-    private const string NewLineSplitter = "\n";
+    private readonly string _lineSplitter = Environment.NewLine;
     private readonly IInputFileService _inputFileService;
 
     public Day1(IInputFileService inputFileService)
@@ -39,17 +39,17 @@ public class Day1
         var input = _inputFileService.GetInput(InputFileName);
 
         var inputsPerElf = input
-            .Split($"{NewLineSplitter}{NewLineSplitter}")
+            .Split($"{_lineSplitter}{_lineSplitter}")
             .Where(i => !string.IsNullOrWhiteSpace(i));
 
         var elfCaloricTotals = inputsPerElf.Select(GetTotalCalories);
         return elfCaloricTotals;
     }
 
-    private static int GetTotalCalories(string input)
+    private int GetTotalCalories(string input)
     {
         var calories = input
-            .Split(NewLineSplitter)
+            .Split(_lineSplitter)
             .Where(i => !string.IsNullOrWhiteSpace(i))
             .Select(int.Parse);
 
