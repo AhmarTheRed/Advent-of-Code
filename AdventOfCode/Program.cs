@@ -7,3 +7,4 @@ IInputFileService inputFileService = new InputFileService();
 var day1 = new Day1(inputFileService);
 
 Console.WriteLine(day1.GetMostCalories());
+Console.WriteLine(day1.GetTop3MostCaloriesTotal());
