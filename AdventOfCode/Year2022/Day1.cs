@@ -5,8 +5,8 @@ namespace AdventOfCode.Year2022;
 public class Day1
 {
     private const string InputFileName = "Day1";
-    private readonly string _lineSplitter = Environment.NewLine;
     private readonly IInputFileService _inputFileService;
+    private readonly string _lineSplitter = Environment.NewLine;
 
     public Day1(IInputFileService inputFileService)
     {

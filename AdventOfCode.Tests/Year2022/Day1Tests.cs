@@ -7,6 +7,18 @@ public class Day1Tests
     private readonly string _testInput =
         $"1000{Environment.NewLine}2000{Environment.NewLine}3000{Environment.NewLine}{Environment.NewLine}4000{Environment.NewLine}{Environment.NewLine}5000{Environment.NewLine}6000{Environment.NewLine}{Environment.NewLine}7000{Environment.NewLine}8000{Environment.NewLine}9000{Environment.NewLine}{Environment.NewLine}10000{Environment.NewLine}";
 
+    private Mock<IInputFileService> MockInputFileService
+    {
+        get
+        {
+            var inputFileService = new Mock<IInputFileService>();
+            inputFileService
+                .Setup(s => s.GetInput(It.IsAny<string>()))
+                .Returns(_testInput);
+            return inputFileService;
+        }
+    }
+
     [Fact]
     public void GetMostCalories_WithValidInput_ReturnsMostCalories()
     {
@@ -23,7 +35,7 @@ public class Day1Tests
     public void GetTop3MostCalories_WithValidInput_ReturnsTop3MostCalories()
     {
         //Arrange
-        var expected = new[] { 24000, 11000, 10000 };
+        var expected = new[] {24000, 11000, 10000};
 
         //Act
         var day1 = new Day1(MockInputFileService.Object);
@@ -43,17 +55,5 @@ public class Day1Tests
 
         //Assert
         actual.Should().Be(45000);
-    }
-
-    private Mock<IInputFileService> MockInputFileService
-    {
-        get
-        {
-            var inputFileService = new Mock<IInputFileService>();
-            inputFileService
-                .Setup(s => s.GetInput(It.IsAny<string>()))
-                .Returns(_testInput);
-            return inputFileService;
-        }
     }
 }
