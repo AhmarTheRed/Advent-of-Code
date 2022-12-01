@@ -4,9 +4,9 @@ namespace AdventOfCode.Year2022;
 
 public class Day1
 {
-    private readonly IInputFileService _inputFileService;
     private const string InputFileName = "Day1";
     private const string NewLineSplitter = "\n";
+    private readonly IInputFileService _inputFileService;
 
     public Day1(IInputFileService inputFileService)
     {
@@ -27,7 +27,7 @@ public class Day1
     private static int GetTotalCalories(string input)
     {
         var calories = input.Split(NewLineSplitter).Where(i => !string.IsNullOrWhiteSpace(i)).Select(int.Parse);
-        
+
         return calories.Sum();
     }
 }
