@@ -7,11 +7,12 @@ public class RoundCreator : IRoundCreator
 {
     private readonly IRoundDecider _roundDecider;
     private readonly IRoundScorer _roundScorer;
-    private readonly IRpsInputParser _rpsInputParser;
+    private readonly IRpsChoiceInputParser _rpsChoiceInputParser;
 
-    public RoundCreator(IRpsInputParser rpsInputParser, IRoundDecider roundDecider, IRoundScorer roundScorer)
+    public RoundCreator(IRpsChoiceInputParser rpsChoiceInputParser, IRoundDecider roundDecider,
+        IRoundScorer roundScorer)
     {
-        _rpsInputParser = rpsInputParser;
+        _rpsChoiceInputParser = rpsChoiceInputParser;
         _roundDecider = roundDecider;
         _roundScorer = roundScorer;
     }
@@ -20,9 +21,9 @@ public class RoundCreator : IRoundCreator
     {
         var inputs = input.Split(' ');
 
-        var opponentChoice = _rpsInputParser.Parse(inputs[0]);
+        var opponentChoice = _rpsChoiceInputParser.Parse(inputs[0]);
 
-        var yourChoice = _rpsInputParser.Parse(inputs[1]);
+        var yourChoice = _rpsChoiceInputParser.Parse(inputs[1]);
 
         var result = _roundDecider.DecideRound(yourChoice, opponentChoice);
 

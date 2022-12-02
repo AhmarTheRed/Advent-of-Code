@@ -16,7 +16,7 @@ public class RpsInputParserTests
     public void Parse_WithValidInput_ReturnsRpsValue(string input, Choice expected)
     {
         //Arrange
-        IRpsInputParser parser = new RpsInputParser();
+        IRpsChoiceInputParser parser = new RpsChoiceInputParser();
 
         //Act
         var actual = parser.Parse(input);

@@ -3,7 +3,7 @@ using AdventOfCode.Year2022.Day2.Models;
 
 namespace AdventOfCode.Year2022.Day2.Services;
 
-public class RpsInputParser : IRpsInputParser
+public class RpsChoiceInputParser : IRpsChoiceInputParser
 {
     public Choice Parse(string input)
     {

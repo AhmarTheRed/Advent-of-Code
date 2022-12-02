@@ -21,11 +21,11 @@ public class RoundCreatorTests
             Result = Result.Win,
             Score = score
         };
-        var mockInputParser = new Mock<IRpsInputParser>();
-        mockInputParser
+        var mockChoiceInputParser = new Mock<IRpsChoiceInputParser>();
+        mockChoiceInputParser
             .Setup(p => p.Parse(opponentChoice))
             .Returns(Choice.Rock);
-        mockInputParser
+        mockChoiceInputParser
             .Setup(p => p.Parse(yourChoice))
             .Returns(Choice.Paper);
 
@@ -40,7 +40,7 @@ public class RoundCreatorTests
             .Returns(score);
 
         IRoundCreator creator =
-            new RoundCreator(mockInputParser.Object, mockRoundDecider.Object, mockRoundScorer.Object);
+            new RoundCreator(mockChoiceInputParser.Object, mockRoundDecider.Object, mockRoundScorer.Object);
 
         //Act
         var actual = creator.CreateRound(input);
