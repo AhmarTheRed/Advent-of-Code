@@ -21,7 +21,7 @@ public class RoundCreatorTests
             Result = Result.Win,
             Score = score
         };
-        var mockChoiceInputParser = new Mock<IRpsChoiceInputParser>();
+        var mockChoiceInputParser = new Mock<IChoiceInputParser>();
         mockChoiceInputParser
             .Setup(p => p.Parse(opponentChoice))
             .Returns(Choice.Rock);

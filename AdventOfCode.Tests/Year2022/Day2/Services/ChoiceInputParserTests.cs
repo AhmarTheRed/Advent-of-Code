@@ -4,7 +4,7 @@ using AdventOfCode.Year2022.Day2.Services;
 
 namespace AdventOfCode.Tests.Year2022.Day2.Services;
 
-public class RpsInputParserTests
+public class ChoiceInputParserTests
 {
     [Theory]
     [InlineData("A", Choice.Rock)]
@@ -16,7 +16,7 @@ public class RpsInputParserTests
     public void Parse_WithValidInput_ReturnsRpsValue(string input, Choice expected)
     {
         //Arrange
-        IRpsChoiceInputParser parser = new RpsChoiceInputParser();
+        IChoiceInputParser parser = new ChoiceInputParser();
 
         //Act
         var actual = parser.Parse(input);

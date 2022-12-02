@@ -2,7 +2,7 @@ using AdventOfCode.Year2022.Day2.Models;
 
 namespace AdventOfCode.Year2022.Day2.Interfaces;
 
-public interface IRpsChoiceInputParser
+public interface IChoiceInputParser
 {
     Choice Parse(string input);
 }
