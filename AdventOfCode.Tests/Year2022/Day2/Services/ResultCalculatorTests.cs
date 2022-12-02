@@ -4,7 +4,7 @@ using AdventOfCode.Year2022.Day2.Services;
 
 namespace AdventOfCode.Tests.Year2022.Day2.Services;
 
-public class RoundDeciderTests
+public class ResultCalculatorTests
 {
     [Theory]
     [InlineData(Choice.Rock, Choice.Rock, Result.Draw)]
@@ -16,13 +16,13 @@ public class RoundDeciderTests
     [InlineData(Choice.Scissors, Choice.Rock, Result.Loss)]
     [InlineData(Choice.Scissors, Choice.Paper, Result.Win)]
     [InlineData(Choice.Scissors, Choice.Scissors, Result.Draw)]
-    public void DecideRound_WithValidInputs_ReturnsResult(Choice yourChoice, Choice opponentChoice, Result expected)
+    public void Calculate_WithValidInputs_ReturnsResult(Choice yourChoice, Choice opponentChoice, Result expected)
     {
         //Arrange
-        IRoundDecider decider = new RoundDecider(new Rules());
+        IResultCalculator calculator = new ResultCalculator(new Rules());
 
         //Act
-        var actual = decider.DecideRound(yourChoice, opponentChoice);
+        var actual = calculator.Calculate(yourChoice, opponentChoice);
 
         //Assert
         actual.Should().Be(expected);

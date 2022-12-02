@@ -4,23 +4,23 @@ using AdventOfCode.Year2022.Day2.Services;
 
 namespace AdventOfCode.Tests.Year2022.Day2.Services;
 
-public class RoundCreatorForFirstHalfTests
+public class RoundCreatorForSecondHalfTests
 {
     [Fact]
     public void CreateRound_WithValidInput_ReturnsPopulatedRound()
     {
         //Arrange
         const string opponentChoice = "A";
-        const string yourChoice = "Y";
-        const string input = $"{opponentChoice} {yourChoice}";
-        const int score = 8;
+        const string result = "Y";
+        const string input = $"{opponentChoice} {result}";
+        const int score = 4;
         var expected = new Round
         {
             Game = new Game
             {
-                YourChoice = Choice.Paper,
                 OpponentChoice = Choice.Rock,
-                Result = Result.Win
+                YourChoice = Choice.Rock,
+                Result = Result.Draw
             },
             Score = score
         };
@@ -28,23 +28,24 @@ public class RoundCreatorForFirstHalfTests
         mockChoiceInputParser
             .Setup(p => p.Parse(opponentChoice))
             .Returns(Choice.Rock);
-        mockChoiceInputParser
-            .Setup(p => p.Parse(yourChoice))
-            .Returns(Choice.Paper);
 
-        var mockResultCalculator = new Mock<IResultCalculator>();
-        mockResultCalculator
-            .Setup(d => d.Calculate(It.IsAny<Choice>(), It.IsAny<Choice>()))
-            .Returns(Result.Win);
+        var mockResultInputParser = new Mock<IResultInputParser>();
+        mockResultInputParser
+            .Setup(p => p.Parse(result))
+            .Returns(Result.Draw);
+
+        var mockChoiceCalculator = new Mock<IChoiceCalculator>();
+        mockChoiceCalculator
+            .Setup(d => d.Calculate(It.IsAny<Choice>(), It.IsAny<Result>()))
+            .Returns(Choice.Rock);
 
         var mockRoundScorer = new Mock<IRoundScorer>();
         mockRoundScorer
             .Setup(d => d.GetScore(It.IsAny<Choice>(), It.IsAny<Result>()))
             .Returns(score);
 
-        IRoundCreator creator =
-            new RoundCreatorForFirstHalf(mockChoiceInputParser.Object, mockResultCalculator.Object,
-                mockRoundScorer.Object);
+        IRoundCreator creator = new RoundCreatorForSecondHalf(mockChoiceInputParser.Object,
+            mockResultInputParser.Object, mockChoiceCalculator.Object, mockRoundScorer.Object);
 
         //Act
         var actual = creator.CreateRound(input);

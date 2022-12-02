@@ -11,13 +11,26 @@ var day1 = new Day1(inputFileService);
 Console.WriteLine(day1.GetMostCalories());
 Console.WriteLine(day1.GetTop3MostCaloriesTotal());
 
-var day2 = new Day2(
+var day2FirstHalf = new Day2(
     inputFileService,
     new RoundCreatorForFirstHalf(
         new ChoiceInputParser(),
-        new RoundDecider(new Rules()),
+        new ResultCalculator(new Rules()),
         new RoundScorer(
             new ChoiceScorer(),
             new ResultScorer())));
 
-Console.WriteLine(day2.GetTotalScore());
+Console.WriteLine(day2FirstHalf.GetTotalScore());
+
+var day2SecondHalf = new Day2(
+    inputFileService,
+    new RoundCreatorForSecondHalf(
+        new ChoiceInputParser(),
+        new ResultInputParser(),
+        new ChoiceCalculator(
+            new Rules()),
+        new RoundScorer(
+            new ChoiceScorer(),
+            new ResultScorer())));
+
+Console.WriteLine(day2SecondHalf.GetTotalScore());
