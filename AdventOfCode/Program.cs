@@ -6,10 +6,13 @@ using AdventOfCode.Year2022.Day2.Services;
 
 IInputFileService inputFileService = new InputFileService();
 
+Console.WriteLine($"# Advent of Code 2022 - by Ahmar Tareen {Environment.NewLine}");
+Console.WriteLine($"## Answers {Environment.NewLine}");
+
 var day1 = new Day1(inputFileService);
 
-Console.WriteLine(day1.GetMostCalories());
-Console.WriteLine(day1.GetTop3MostCaloriesTotal());
+Console.WriteLine($"Day 1 1/2: {day1.GetMostCalories()}");
+Console.WriteLine($"Day 1 2/2: {day1.GetTop3MostCaloriesTotal()}");
 
 var day2FirstHalf = new Day2(
     inputFileService,
@@ -20,7 +23,7 @@ var day2FirstHalf = new Day2(
             new ChoiceScorer(),
             new ResultScorer())));
 
-Console.WriteLine(day2FirstHalf.GetTotalScore());
+Console.WriteLine($"Day 2 1/2: {day2FirstHalf.GetTotalScore()}");
 
 var day2SecondHalf = new Day2(
     inputFileService,
@@ -33,4 +36,4 @@ var day2SecondHalf = new Day2(
             new ChoiceScorer(),
             new ResultScorer())));
 
-Console.WriteLine(day2SecondHalf.GetTotalScore());
+Console.WriteLine($"Day 2 2/2: {day2SecondHalf.GetTotalScore()}");
