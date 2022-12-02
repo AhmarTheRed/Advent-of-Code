@@ -1,6 +1,6 @@
 ﻿using AdventOfCode.Common.Interfaces;
 
-namespace AdventOfCode.Year2022;
+namespace AdventOfCode.Year2022.Day1;
 
 public class Day1
 {

@@ -1,7 +1,8 @@
 ﻿using AdventOfCode.Common.Interfaces;
 using AdventOfCode.Common.Services;
-using AdventOfCode.Year2022;
+using AdventOfCode.Year2022.Day1;
 using AdventOfCode.Year2022.Day2;
+using AdventOfCode.Year2022.Day2.Services;
 
 IInputFileService inputFileService = new InputFileService();
 

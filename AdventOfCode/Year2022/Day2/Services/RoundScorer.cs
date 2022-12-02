@@ -1,6 +1,7 @@
 using AdventOfCode.Year2022.Day2.Interfaces;
+using AdventOfCode.Year2022.Day2.Models;
 
-namespace AdventOfCode.Year2022.Day2;
+namespace AdventOfCode.Year2022.Day2.Services;
 
 public class RoundScorer : IRoundScorer
 {
@@ -13,7 +14,7 @@ public class RoundScorer : IRoundScorer
         _resultScorer = resultScorer;
     }
 
-    public int GetScore(Rps choice, Result result)
+    public int GetScore(Choice choice, Result result)
     {
         return _choiceScorer.GetScore(choice) + _resultScorer.GetScore(result);
     }

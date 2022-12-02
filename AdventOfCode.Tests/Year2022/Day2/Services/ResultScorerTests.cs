@@ -1,7 +1,8 @@
-using AdventOfCode.Year2022.Day2;
 using AdventOfCode.Year2022.Day2.Interfaces;
+using AdventOfCode.Year2022.Day2.Models;
+using AdventOfCode.Year2022.Day2.Services;
 
-namespace AdventOfCode.Tests.Year2022.Day2;
+namespace AdventOfCode.Tests.Year2022.Day2.Services;
 
 public class ResultScorerTests
 {

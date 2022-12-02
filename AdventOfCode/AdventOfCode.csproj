@@ -8,14 +8,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Remove="Year2022\Inputs\input" />
+        <Content Include="Year2022\Inputs\Day2.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Year2022\Inputs\input"/>
         <Content Include="Year2022\Inputs\Day1">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <None Remove="Year2022\Inputs\Day2.txt" />
-        <Content Include="Year2022\Inputs\Day2.txt">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
+        <None Remove="Year2022\Inputs\Day2.txt"/>
+        <None Remove="Year2022\Inputs\Day2"/>
     </ItemGroup>
 
 </Project>

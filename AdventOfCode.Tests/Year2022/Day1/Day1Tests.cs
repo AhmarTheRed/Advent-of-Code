@@ -1,6 +1,4 @@
-﻿using AdventOfCode.Year2022;
-
-namespace AdventOfCode.Tests.Year2022;
+﻿namespace AdventOfCode.Tests.Year2022.Day1;
 
 public class Day1Tests
 {
@@ -24,7 +22,7 @@ public class Day1Tests
     {
         //Arrange
         //Act
-        var day1 = new Day1(MockInputFileService.Object);
+        var day1 = new AdventOfCode.Year2022.Day1.Day1(MockInputFileService.Object);
         var actual = day1.GetMostCalories();
 
         //Assert
@@ -38,7 +36,7 @@ public class Day1Tests
         var expected = new[] {24000, 11000, 10000};
 
         //Act
-        var day1 = new Day1(MockInputFileService.Object);
+        var day1 = new AdventOfCode.Year2022.Day1.Day1(MockInputFileService.Object);
         var actual = day1.GetTop3MostCalories();
 
         //Assert
@@ -50,7 +48,7 @@ public class Day1Tests
     {
         //Arrange
         //Act
-        var day1 = new Day1(MockInputFileService.Object);
+        var day1 = new AdventOfCode.Year2022.Day1.Day1(MockInputFileService.Object);
         var actual = day1.GetTop3MostCaloriesTotal();
 
         //Assert

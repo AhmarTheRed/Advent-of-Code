@@ -1,7 +1,8 @@
-using AdventOfCode.Year2022.Day2;
 using AdventOfCode.Year2022.Day2.Interfaces;
+using AdventOfCode.Year2022.Day2.Models;
+using AdventOfCode.Year2022.Day2.Services;
 
-namespace AdventOfCode.Tests.Year2022.Day2;
+namespace AdventOfCode.Tests.Year2022.Day2.Services;
 
 public class RoundCreatorTests
 {
@@ -15,27 +16,27 @@ public class RoundCreatorTests
         var score = 8;
         var expected = new Round
         {
-            YourChoice = Rps.Paper,
-            OpponentChoice = Rps.Rock,
+            YourChoice = Choice.Paper,
+            OpponentChoice = Choice.Rock,
             Result = Result.Win,
             Score = score
         };
         var mockInputParser = new Mock<IRpsInputParser>();
         mockInputParser
             .Setup(p => p.Parse(opponentChoice))
-            .Returns(Rps.Rock);
+            .Returns(Choice.Rock);
         mockInputParser
             .Setup(p => p.Parse(yourChoice))
-            .Returns(Rps.Paper);
+            .Returns(Choice.Paper);
 
         var mockRoundDecider = new Mock<IRoundDecider>();
         mockRoundDecider
-            .Setup(d => d.DecideRound(It.IsAny<Rps>(), It.IsAny<Rps>()))
+            .Setup(d => d.DecideRound(It.IsAny<Choice>(), It.IsAny<Choice>()))
             .Returns(Result.Win);
 
         var mockRoundScorer = new Mock<IRoundScorer>();
         mockRoundScorer
-            .Setup(d => d.GetScore(It.IsAny<Rps>(), It.IsAny<Result>()))
+            .Setup(d => d.GetScore(It.IsAny<Choice>(), It.IsAny<Result>()))
             .Returns(score);
 
         IRoundCreator creator =

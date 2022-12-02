@@ -1,5 +1,6 @@
 using AdventOfCode.Common.Interfaces;
 using AdventOfCode.Year2022.Day2.Interfaces;
+using AdventOfCode.Year2022.Day2.Models;
 
 namespace AdventOfCode.Year2022.Day2;
 
@@ -7,8 +8,8 @@ public class Day2
 {
     private const string InputFileName = "Day2.txt";
     private readonly IInputFileService _inputFileService;
+    private readonly string _lineSplitter = Environment.NewLine;
     private readonly IRoundCreator _roundCreator;
-    private readonly string _lineSplitter = "\n";
 
     public Day2(IInputFileService inputFileService, IRoundCreator roundCreator)
     {

@@ -1,6 +1,8 @@
+using AdventOfCode.Year2022.Day2.Models;
+
 namespace AdventOfCode.Year2022.Day2.Interfaces;
 
 public interface IRoundScorer
 {
-    public int GetScore(Rps choice, Result result);
+    public int GetScore(Choice choice, Result result);
 }

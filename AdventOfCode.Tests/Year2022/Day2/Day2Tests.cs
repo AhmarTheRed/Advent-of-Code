@@ -1,5 +1,5 @@
-using AdventOfCode.Year2022.Day2;
 using AdventOfCode.Year2022.Day2.Interfaces;
+using AdventOfCode.Year2022.Day2.Models;
 
 namespace AdventOfCode.Tests.Year2022.Day2;
 
