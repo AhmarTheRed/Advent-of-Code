@@ -5,32 +5,15 @@ namespace AdventOfCode.Year2022.Day2.Services;
 
 public class RoundDecider : IRoundDecider
 {
+    private readonly IRules _rules;
+
+    public RoundDecider(IRules rules)
+    {
+        _rules = rules;
+    }
+
     public Result DecideRound(Choice yourChoice, Choice opponentChoice)
     {
-        return yourChoice switch
-        {
-            Choice.Rock => opponentChoice switch
-            {
-                Choice.Rock => Result.Draw,
-                Choice.Paper => Result.Loss,
-                Choice.Scissors => Result.Win,
-                _ => throw new ArgumentOutOfRangeException(nameof(opponentChoice), opponentChoice, null)
-            },
-            Choice.Paper => opponentChoice switch
-            {
-                Choice.Rock => Result.Win,
-                Choice.Paper => Result.Draw,
-                Choice.Scissors => Result.Loss,
-                _ => throw new ArgumentOutOfRangeException(nameof(opponentChoice), opponentChoice, null)
-            },
-            Choice.Scissors => opponentChoice switch
-            {
-                Choice.Rock => Result.Loss,
-                Choice.Paper => Result.Win,
-                Choice.Scissors => Result.Draw,
-                _ => throw new ArgumentOutOfRangeException(nameof(opponentChoice), opponentChoice, null)
-            },
-            _ => throw new ArgumentOutOfRangeException(nameof(yourChoice), yourChoice, null)
-        };
+        return _rules.GetRules().Single(g => g.YourChoice == yourChoice && g.OpponentChoice == opponentChoice).Result;
     }
 }

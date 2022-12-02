@@ -4,7 +4,7 @@ using AdventOfCode.Year2022.Day2.Services;
 
 namespace AdventOfCode.Tests.Year2022.Day2.Services;
 
-public class RoundCreatorTests
+public class RoundCreatorForFirstHalfTests
 {
     [Fact]
     public void CreateRound_WithValidInput_ReturnsPopulatedRound()
@@ -16,9 +16,12 @@ public class RoundCreatorTests
         var score = 8;
         var expected = new Round
         {
-            YourChoice = Choice.Paper,
-            OpponentChoice = Choice.Rock,
-            Result = Result.Win,
+            Game = new Game
+            {
+                YourChoice = Choice.Paper,
+                OpponentChoice = Choice.Rock,
+                Result = Result.Win
+            },
             Score = score
         };
         var mockChoiceInputParser = new Mock<IChoiceInputParser>();
@@ -40,7 +43,7 @@ public class RoundCreatorTests
             .Returns(score);
 
         IRoundCreator creator =
-            new RoundCreator(mockChoiceInputParser.Object, mockRoundDecider.Object, mockRoundScorer.Object);
+            new RoundCreatorForFirstHalf(mockChoiceInputParser.Object, mockRoundDecider.Object, mockRoundScorer.Object);
 
         //Act
         var actual = creator.CreateRound(input);

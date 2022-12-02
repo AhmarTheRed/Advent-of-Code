@@ -3,13 +3,13 @@ using AdventOfCode.Year2022.Day2.Models;
 
 namespace AdventOfCode.Year2022.Day2.Services;
 
-public class RoundCreator : IRoundCreator
+public class RoundCreatorForFirstHalf : IRoundCreator
 {
     private readonly IChoiceInputParser _choiceInputParser;
     private readonly IRoundDecider _roundDecider;
     private readonly IRoundScorer _roundScorer;
 
-    public RoundCreator(IChoiceInputParser choiceInputParser, IRoundDecider roundDecider,
+    public RoundCreatorForFirstHalf(IChoiceInputParser choiceInputParser, IRoundDecider roundDecider,
         IRoundScorer roundScorer)
     {
         _choiceInputParser = choiceInputParser;
@@ -29,9 +29,12 @@ public class RoundCreator : IRoundCreator
 
         return new Round
         {
-            OpponentChoice = opponentChoice,
-            YourChoice = yourChoice,
-            Result = result,
+            Game = new Game
+            {
+                OpponentChoice = opponentChoice,
+                YourChoice = yourChoice,
+                Result = result
+            },
             Score = _roundScorer.GetScore(yourChoice, result)
         };
     }

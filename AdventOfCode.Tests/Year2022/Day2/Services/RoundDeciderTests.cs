@@ -19,7 +19,7 @@ public class RoundDeciderTests
     public void DecideRound_WithValidInputs_ReturnsResult(Choice yourChoice, Choice opponentChoice, Result expected)
     {
         //Arrange
-        IRoundDecider decider = new RoundDecider();
+        IRoundDecider decider = new RoundDecider(new Rules());
 
         //Act
         var actual = decider.DecideRound(yourChoice, opponentChoice);

@@ -13,9 +13,9 @@ Console.WriteLine(day1.GetTop3MostCaloriesTotal());
 
 var day2 = new Day2(
     inputFileService,
-    new RoundCreator(
+    new RoundCreatorForFirstHalf(
         new ChoiceInputParser(),
-        new RoundDecider(),
+        new RoundDecider(new Rules()),
         new RoundScorer(
             new ChoiceScorer(),
             new ResultScorer())));
