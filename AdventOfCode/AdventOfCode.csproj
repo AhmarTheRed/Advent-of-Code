@@ -17,6 +17,14 @@
         </Content>
         <None Remove="Year2022\Inputs\Day2.txt"/>
         <None Remove="Year2022\Inputs\Day2"/>
+        <None Remove="Year2022\Inputs\Day3.txt"/>
+        <Content Include="Year2022\Inputs\Day3.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Year2022\Day3\Models"/>
     </ItemGroup>
 
 </Project>

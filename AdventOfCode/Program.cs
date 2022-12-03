@@ -3,6 +3,8 @@ using AdventOfCode.Common.Services;
 using AdventOfCode.Year2022.Day1;
 using AdventOfCode.Year2022.Day2;
 using AdventOfCode.Year2022.Day2.Services;
+using AdventOfCode.Year2022.Day3;
+using AdventOfCode.Year2022.Day3.Services;
 
 IInputFileService inputFileService = new InputFileService();
 
@@ -37,3 +39,7 @@ var day2SecondHalf = new Day2(
             new ResultScorer())));
 
 Console.WriteLine($"Day 2 2/2: {day2SecondHalf.GetTotalScore()}");
+
+var day3 = new Day3(new InputFileService(), new DuplicateFinderService(), new ItemPriorityService());
+
+Console.WriteLine($"Day 3 1/2: {day3.GetCommonPriorityTotal()}");
