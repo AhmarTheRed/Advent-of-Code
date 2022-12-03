@@ -29,7 +29,9 @@ public class Day3
 
         var duplicates = inputs.Select(GetDuplicates);
 
-        return duplicates.SelectMany(d => d).Select(_itemPriorityService.GetPriority).Sum();
+        return duplicates.SelectMany(d => d)
+            .Select(_itemPriorityService.GetPriority)
+            .Sum();
     }
 
     private IEnumerable<char> GetDuplicates(string inputs)
