@@ -5,7 +5,7 @@ namespace AdventOfCode.Tests.Year2022.Day2;
 
 public class Day2Tests
 {
-    private readonly string _testInput = $"A Y{Environment.NewLine}B X{Environment.NewLine}C Z";
+    private readonly string[] _testInputs = {"A Y", "B X", "C Z"};
 
     private Mock<IInputFileService> MockInputFileService
     {
@@ -13,8 +13,8 @@ public class Day2Tests
         {
             var inputFileService = new Mock<IInputFileService>();
             inputFileService
-                .Setup(s => s.GetInput(It.IsAny<string>()))
-                .Returns(_testInput);
+                .Setup(s => s.GetInputs(It.IsAny<string>(), It.IsAny<string>()))
+                .Returns(_testInputs);
             return inputFileService;
         }
     }

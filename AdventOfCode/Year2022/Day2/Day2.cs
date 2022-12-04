@@ -8,7 +8,6 @@ public class Day2
 {
     private const string InputFileName = "Day2.txt";
     private readonly IInputFileService _inputFileService;
-    private readonly string _lineSplitter = Environment.NewLine;
     private readonly IRoundCreator _roundCreator;
 
     public Day2(IInputFileService inputFileService, IRoundCreator roundCreator)
@@ -19,11 +18,7 @@ public class Day2
 
     public int GetTotalScore()
     {
-        var input = _inputFileService.GetInput(InputFileName);
-
-        var inputs = input
-            .Split(_lineSplitter)
-            .Where(i => !string.IsNullOrWhiteSpace(i));
+        var inputs = _inputFileService.GetInputs(InputFileName);
 
         var rounds = inputs.Select(GetRound);
 

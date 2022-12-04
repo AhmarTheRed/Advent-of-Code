@@ -42,4 +42,5 @@ Console.WriteLine($"Day 2 2/2: {day2SecondHalf.GetTotalScore()}");
 
 var day3 = new Day3(new InputFileService(), new DuplicateFinderService(), new ItemPriorityService());
 
-Console.WriteLine($"Day 3 1/2: {day3.GetCommonPriorityTotal()}");
+Console.WriteLine($"Day 3 1/2: {day3.GetBucketCommonPriorityTotal()}");
+Console.WriteLine($"Day 3 2/2: {day3.GetGroupCommonPriorityTotal()}");

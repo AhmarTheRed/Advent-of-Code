@@ -24,6 +24,9 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Content Include="Year2022\Inputs\TestInput2">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
         <None Remove="Year2022\Inputs\TestInput1"/>
         <Content Include="Year2022\Inputs\TestInput1">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>

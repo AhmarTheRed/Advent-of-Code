@@ -6,7 +6,16 @@ public class InputFileService : IInputFileService
 {
     private const string BasePath = "Year2022/Inputs";
 
-    public string GetInput(string name)
+    public IEnumerable<string> GetInputs(string name, string? lineSplitter = null)
+    {
+        lineSplitter ??= Environment.NewLine;
+
+        return GetInput(name)
+            .Split(lineSplitter)
+            .Where(i => !string.IsNullOrWhiteSpace(i));
+    }
+
+    private string GetInput(string name)
     {
         return File.ReadAllText($"{BasePath}/{name}");
     }

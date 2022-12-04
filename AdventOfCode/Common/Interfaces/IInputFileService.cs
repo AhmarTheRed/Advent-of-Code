@@ -2,5 +2,5 @@
 
 public interface IInputFileService
 {
-    public string GetInput(string name);
+    IEnumerable<string> GetInputs(string name, string? lineSplitter = null);
 }

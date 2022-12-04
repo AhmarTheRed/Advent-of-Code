@@ -36,14 +36,9 @@ public class Day1
 
     private IEnumerable<int> GetElfCaloricTotals()
     {
-        var input = _inputFileService.GetInput(InputFileName);
+        var inputsPerElf = _inputFileService.GetInputs(InputFileName, $"{_lineSplitter}{_lineSplitter}");
 
-        var inputsPerElf = input
-            .Split($"{_lineSplitter}{_lineSplitter}")
-            .Where(i => !string.IsNullOrWhiteSpace(i));
-
-        var elfCaloricTotals = inputsPerElf.Select(GetTotalCalories);
-        return elfCaloricTotals;
+        return inputsPerElf.Select(GetTotalCalories);
     }
 
     private int GetTotalCalories(string input)

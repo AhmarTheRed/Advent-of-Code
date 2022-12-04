@@ -2,8 +2,14 @@
 
 public class Day1Tests
 {
-    private readonly string _testInput =
-        $"1000{Environment.NewLine}2000{Environment.NewLine}3000{Environment.NewLine}{Environment.NewLine}4000{Environment.NewLine}{Environment.NewLine}5000{Environment.NewLine}6000{Environment.NewLine}{Environment.NewLine}7000{Environment.NewLine}8000{Environment.NewLine}9000{Environment.NewLine}{Environment.NewLine}10000{Environment.NewLine}";
+    private readonly string[] _testInputs =
+    {
+        $"1000{Environment.NewLine}2000{Environment.NewLine}3000",
+        "4000",
+        $"5000{Environment.NewLine}6000",
+        $"7000{Environment.NewLine}8000{Environment.NewLine}9000",
+        $"10000{Environment.NewLine}"
+    };
 
     private Mock<IInputFileService> MockInputFileService
     {
@@ -11,8 +17,8 @@ public class Day1Tests
         {
             var inputFileService = new Mock<IInputFileService>();
             inputFileService
-                .Setup(s => s.GetInput(It.IsAny<string>()))
-                .Returns(_testInput);
+                .Setup(s => s.GetInputs(It.IsAny<string>(), It.IsAny<string>()))
+                .Returns(_testInputs);
             return inputFileService;
         }
     }

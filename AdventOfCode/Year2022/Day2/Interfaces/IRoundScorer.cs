@@ -4,5 +4,5 @@ namespace AdventOfCode.Year2022.Day2.Interfaces;
 
 public interface IRoundScorer
 {
-    public int GetScore(Choice choice, Result result);
+    int GetScore(Choice choice, Result result);
 }

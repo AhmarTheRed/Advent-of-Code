@@ -9,7 +9,6 @@ public class Day3
     private readonly IDuplicateFinderService _duplicateFinderService;
     private readonly IInputFileService _inputFileService;
     private readonly IItemPriorityService _itemPriorityService;
-    private readonly string _lineSplitter = Environment.NewLine;
 
     public Day3(IInputFileService inputFileService, IDuplicateFinderService duplicateFinderService,
         IItemPriorityService itemPriorityService)
@@ -19,22 +18,45 @@ public class Day3
         _duplicateFinderService = duplicateFinderService;
     }
 
-    public int GetCommonPriorityTotal()
+    public int GetBucketCommonPriorityTotal()
     {
-        var input = _inputFileService.GetInput(InputFileName);
+        var inputs = _inputFileService.GetInputs(InputFileName);
 
-        var inputs = input
-            .Split(_lineSplitter)
-            .Where(i => !string.IsNullOrWhiteSpace(i));
-
-        var duplicates = inputs.Select(GetDuplicates);
+        var duplicates = inputs.Select(GetBucketDuplicates);
 
         return duplicates.SelectMany(d => d)
             .Select(_itemPriorityService.GetPriority)
             .Sum();
     }
 
-    private IEnumerable<char> GetDuplicates(string inputs)
+    public int GetGroupCommonPriorityTotal()
+    {
+        var inputs = _inputFileService.GetInputs(InputFileName);
+
+        var duplicates = GetGroupCommon(inputs.ToList());
+
+        return duplicates.SelectMany(d => d)
+            .Select(_itemPriorityService.GetPriority)
+            .Sum();
+    }
+
+    private IEnumerable<IEnumerable<char>> GetGroupCommon(IList<string> inputs)
+    {
+        IList<IEnumerable<char>> common = new List<IEnumerable<char>>();
+
+        for (var i = 0; i < inputs.Count; i += 3)
+        {
+            var firstBucket = inputs[i];
+            var secondBucket = inputs[i + 1];
+            var thirdBucket = inputs[i + 2];
+
+            common.Add(_duplicateFinderService.GetCommonItems(firstBucket, secondBucket, thirdBucket));
+        }
+
+        return common;
+    }
+
+    private IEnumerable<char> GetBucketDuplicates(string inputs)
     {
         var bucketItems = inputs.ToCharArray();
 
@@ -42,6 +64,6 @@ public class Day3
 
         var secondContainerItems = bucketItems.Skip(bucketItems.Length / 2);
 
-        return _duplicateFinderService.GetDuplicates(firstContainerItems, secondContainerItems);
+        return _duplicateFinderService.GetCommonItems(firstContainerItems, secondContainerItems);
     }
 }
