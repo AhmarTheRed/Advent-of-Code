@@ -3,9 +3,9 @@ using AdventOfCode.Common.Models;
 
 namespace AdventOfCode.Year2022.Day1;
 
-public class Day1Puzzle : BaseDayPuzzle
+public class Day1 : BaseDay
 {
-    public Day1Puzzle(IInputFileService inputFileService) : base("Day1", inputFileService)
+    public Day1(IInputFileService inputFileService) : base("Day1", inputFileService)
     {
     }
 

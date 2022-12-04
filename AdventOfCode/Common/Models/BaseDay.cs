@@ -2,13 +2,13 @@ using AdventOfCode.Common.Interfaces;
 
 namespace AdventOfCode.Common.Models;
 
-public abstract class BaseDayPuzzle
+public abstract class BaseDay
 {
     private readonly string _inputFileName;
     private readonly IInputFileService _inputFileService;
     protected readonly string? LineSplitter = Environment.NewLine;
 
-    protected BaseDayPuzzle(string inputFileName, IInputFileService inputFileService)
+    protected BaseDay(string inputFileName, IInputFileService inputFileService)
     {
         _inputFileName = inputFileName;
         _inputFileService = inputFileService;

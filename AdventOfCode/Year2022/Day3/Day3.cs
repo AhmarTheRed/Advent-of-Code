@@ -4,13 +4,13 @@ using AdventOfCode.Year2022.Day3.Interfaces;
 
 namespace AdventOfCode.Year2022.Day3;
 
-public class Day3Puzzle : BaseDayPuzzle
+public class Day3 : BaseDay
 {
     private readonly IDuplicateFinderService _duplicateFinderService;
     private readonly IInputFileService _inputFileService;
     private readonly IItemPriorityService _itemPriorityService;
 
-    public Day3Puzzle(IInputFileService inputFileService, IDuplicateFinderService duplicateFinderService,
+    public Day3(IInputFileService inputFileService, IDuplicateFinderService duplicateFinderService,
         IItemPriorityService itemPriorityService) : base("Day3.txt", inputFileService)
     {
         _itemPriorityService = itemPriorityService;

@@ -5,11 +5,11 @@ using AdventOfCode.Year2022.Day2.Models;
 
 namespace AdventOfCode.Year2022.Day2;
 
-public class Day2Puzzle : BaseDayPuzzle
+public class Day2 : BaseDay
 {
     private readonly IRoundCreator _roundCreator;
 
-    public Day2Puzzle(IInputFileService inputFileService, IRoundCreator roundCreator) : base("Day2.txt",
+    public Day2(IInputFileService inputFileService, IRoundCreator roundCreator) : base("Day2.txt",
         inputFileService)
     {
         _roundCreator = roundCreator;

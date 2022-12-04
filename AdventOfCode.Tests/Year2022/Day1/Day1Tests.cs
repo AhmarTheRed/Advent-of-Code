@@ -1,8 +1,6 @@
-﻿using AdventOfCode.Year2022.Day1;
+﻿namespace AdventOfCode.Tests.Year2022.Day1;
 
-namespace AdventOfCode.Tests.Year2022.Day1;
-
-public class Day1PuzzleTests : DayPuzzleTestsBase
+public class Day1Tests : DayPuzzleTestsBase
 {
     protected override IEnumerable<string> TestInputs => new[]
     {
@@ -18,7 +16,7 @@ public class Day1PuzzleTests : DayPuzzleTestsBase
     {
         //Arrange
         //Act
-        var day1 = new Day1Puzzle(MockInputFileService.Object);
+        var day1 = new AdventOfCode.Year2022.Day1.Day1(MockInputFileService.Object);
         var actual = day1.GetMostCalories();
 
         //Assert
@@ -32,7 +30,7 @@ public class Day1PuzzleTests : DayPuzzleTestsBase
         var expected = new[] {24000, 11000, 10000};
 
         //Act
-        var day1 = new Day1Puzzle(MockInputFileService.Object);
+        var day1 = new AdventOfCode.Year2022.Day1.Day1(MockInputFileService.Object);
         var actual = day1.GetTop3MostCalories();
 
         //Assert
@@ -44,7 +42,7 @@ public class Day1PuzzleTests : DayPuzzleTestsBase
     {
         //Arrange
         //Act
-        var day1 = new Day1Puzzle(MockInputFileService.Object);
+        var day1 = new AdventOfCode.Year2022.Day1.Day1(MockInputFileService.Object);
         var actual = day1.GetTop3MostCaloriesTotal();
 
         //Assert
