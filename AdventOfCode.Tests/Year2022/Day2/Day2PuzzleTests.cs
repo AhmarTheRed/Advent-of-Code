@@ -4,21 +4,9 @@ using AdventOfCode.Year2022.Day2.Models;
 
 namespace AdventOfCode.Tests.Year2022.Day2;
 
-public class Day2PuzzleTests
+public class Day2PuzzleTests : DayPuzzleTestsBase
 {
-    private readonly string[] _testInputs = {"A Y", "B X", "C Z"};
-
-    private Mock<IInputFileService> MockInputFileService
-    {
-        get
-        {
-            var inputFileService = new Mock<IInputFileService>();
-            inputFileService
-                .Setup(s => s.GetInputs(It.IsAny<string>(), It.IsAny<string>()))
-                .Returns(_testInputs);
-            return inputFileService;
-        }
-    }
+    protected override IEnumerable<string> TestInputs => new[] {"A Y", "B X", "C Z"};
 
     [Fact]
     public void GetTotalScore_WithValidInputString_ReturnsTotalScore()

@@ -2,9 +2,9 @@
 
 namespace AdventOfCode.Tests.Year2022.Day1;
 
-public class Day1PuzzleTests
+public class Day1PuzzleTests : DayPuzzleTestsBase
 {
-    private readonly string[] _testInputs =
+    protected override IEnumerable<string> TestInputs => new[]
     {
         $"1000{Environment.NewLine}2000{Environment.NewLine}3000",
         "4000",
@@ -12,18 +12,6 @@ public class Day1PuzzleTests
         $"7000{Environment.NewLine}8000{Environment.NewLine}9000",
         $"10000{Environment.NewLine}"
     };
-
-    private Mock<IInputFileService> MockInputFileService
-    {
-        get
-        {
-            var inputFileService = new Mock<IInputFileService>();
-            inputFileService
-                .Setup(s => s.GetInputs(It.IsAny<string>(), It.IsAny<string>()))
-                .Returns(_testInputs);
-            return inputFileService;
-        }
-    }
 
     [Fact]
     public void GetMostCalories_WithValidInput_ReturnsMostCalories()

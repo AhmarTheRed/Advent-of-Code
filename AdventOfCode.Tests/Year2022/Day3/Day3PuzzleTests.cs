@@ -3,9 +3,9 @@ using AdventOfCode.Year2022.Day3.Interfaces;
 
 namespace AdventOfCode.Tests.Year2022.Day3;
 
-public class Day3PuzzleTests
+public class Day3PuzzleTests : DayPuzzleTestsBase
 {
-    private readonly string[] _testInputs =
+    protected override IEnumerable<string> TestInputs => new[]
     {
         "vJrwpWtwJgWrhcsFMMfFFhFp",
         "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
@@ -14,18 +14,6 @@ public class Day3PuzzleTests
         "ttgJtRGJQctTZtZT",
         "CrZsJsPPZsGzwwsLwLmpwMDw"
     };
-
-    private Mock<IInputFileService> MockInputFileService
-    {
-        get
-        {
-            var inputFileService = new Mock<IInputFileService>();
-            inputFileService
-                .Setup(s => s.GetInputs(It.IsAny<string>(), It.IsAny<string>()))
-                .Returns(_testInputs);
-            return inputFileService;
-        }
-    }
 
     private Mock<IDuplicateFinderService> MockDuplicateFinderService
     {
