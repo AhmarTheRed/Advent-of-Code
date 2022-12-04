@@ -1,8 +1,9 @@
+using AdventOfCode.Year2022.Day3;
 using AdventOfCode.Year2022.Day3.Interfaces;
 
 namespace AdventOfCode.Tests.Year2022.Day3;
 
-public class Day3Tests
+public class Day3PuzzleTests
 {
     private readonly string[] _testInputs =
     {
@@ -116,7 +117,7 @@ public class Day3Tests
     public void GetCommonPriorityTotal_WithValidInput_ReturnsTotal()
     {
         //Arrange
-        var day3 = new AdventOfCode.Year2022.Day3.Day3(MockInputFileService.Object, MockDuplicateFinderService.Object,
+        var day3 = new Day3Puzzle(MockInputFileService.Object, MockDuplicateFinderService.Object,
             MockItemPriorityService.Object);
 
         //Act
@@ -130,7 +131,7 @@ public class Day3Tests
     public void GetGroupCommonPriorityTotal_WithValidInput_ReturnsTotal()
     {
         //Arrange
-        var day3 = new AdventOfCode.Year2022.Day3.Day3(MockInputFileService.Object, MockDuplicateFinderService.Object,
+        var day3 = new Day3Puzzle(MockInputFileService.Object, MockDuplicateFinderService.Object,
             MockItemPriorityService.Object);
 
         //Act

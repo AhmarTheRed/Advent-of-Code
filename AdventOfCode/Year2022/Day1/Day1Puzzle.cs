@@ -1,16 +1,12 @@
 ﻿using AdventOfCode.Common.Interfaces;
+using AdventOfCode.Common.Models;
 
 namespace AdventOfCode.Year2022.Day1;
 
-public class Day1
+public class Day1Puzzle : BaseDayPuzzle
 {
-    private const string InputFileName = "Day1";
-    private readonly IInputFileService _inputFileService;
-    private readonly string _lineSplitter = Environment.NewLine;
-
-    public Day1(IInputFileService inputFileService)
+    public Day1Puzzle(IInputFileService inputFileService) : base("Day1", inputFileService)
     {
-        _inputFileService = inputFileService;
     }
 
     public int GetMostCalories()
@@ -36,7 +32,7 @@ public class Day1
 
     private IEnumerable<int> GetElfCaloricTotals()
     {
-        var inputsPerElf = _inputFileService.GetInputs(InputFileName, $"{_lineSplitter}{_lineSplitter}");
+        var inputsPerElf = GetInputs($"{LineSplitter}{LineSplitter}");
 
         return inputsPerElf.Select(GetTotalCalories);
     }
@@ -44,7 +40,7 @@ public class Day1
     private int GetTotalCalories(string input)
     {
         var calories = input
-            .Split(_lineSplitter)
+            .Split(LineSplitter)
             .Where(i => !string.IsNullOrWhiteSpace(i))
             .Select(int.Parse);
 

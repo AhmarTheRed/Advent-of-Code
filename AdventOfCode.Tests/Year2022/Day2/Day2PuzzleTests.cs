@@ -1,9 +1,10 @@
+using AdventOfCode.Year2022.Day2;
 using AdventOfCode.Year2022.Day2.Interfaces;
 using AdventOfCode.Year2022.Day2.Models;
 
 namespace AdventOfCode.Tests.Year2022.Day2;
 
-public class Day2Tests
+public class Day2PuzzleTests
 {
     private readonly string[] _testInputs = {"A Y", "B X", "C Z"};
 
@@ -43,7 +44,7 @@ public class Day2Tests
                 Score = 6
             });
 
-        var day2 = new AdventOfCode.Year2022.Day2.Day2(MockInputFileService.Object, mockRoundCreator.Object);
+        var day2 = new Day2Puzzle(MockInputFileService.Object, mockRoundCreator.Object);
 
         //Act
         var actual = day2.GetTotalScore();

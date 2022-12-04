@@ -11,12 +11,12 @@ IInputFileService inputFileService = new InputFileService();
 Console.WriteLine($"# Advent of Code 2022 - by Ahmar Tareen {Environment.NewLine}");
 Console.WriteLine($"## Answers {Environment.NewLine}");
 
-var day1 = new Day1(inputFileService);
+var day1 = new Day1Puzzle(inputFileService);
 
 Console.WriteLine($"Day 1 1/2: {day1.GetMostCalories()}");
 Console.WriteLine($"Day 1 2/2: {day1.GetTop3MostCaloriesTotal()}");
 
-var day2FirstHalf = new Day2(
+var day2FirstHalf = new Day2Puzzle(
     inputFileService,
     new RoundCreatorForFirstHalf(
         new ChoiceInputParser(),
@@ -27,7 +27,7 @@ var day2FirstHalf = new Day2(
 
 Console.WriteLine($"Day 2 1/2: {day2FirstHalf.GetTotalScore()}");
 
-var day2SecondHalf = new Day2(
+var day2SecondHalf = new Day2Puzzle(
     inputFileService,
     new RoundCreatorForSecondHalf(
         new ChoiceInputParser(),
@@ -40,7 +40,7 @@ var day2SecondHalf = new Day2(
 
 Console.WriteLine($"Day 2 2/2: {day2SecondHalf.GetTotalScore()}");
 
-var day3 = new Day3(new InputFileService(), new DuplicateFinderService(), new ItemPriorityService());
+var day3 = new Day3Puzzle(new InputFileService(), new DuplicateFinderService(), new ItemPriorityService());
 
 Console.WriteLine($"Day 3 1/2: {day3.GetBucketCommonPriorityTotal()}");
 Console.WriteLine($"Day 3 2/2: {day3.GetGroupCommonPriorityTotal()}");

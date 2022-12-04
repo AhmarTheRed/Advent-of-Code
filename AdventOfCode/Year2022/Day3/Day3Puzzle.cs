@@ -1,17 +1,17 @@
 using AdventOfCode.Common.Interfaces;
+using AdventOfCode.Common.Models;
 using AdventOfCode.Year2022.Day3.Interfaces;
 
 namespace AdventOfCode.Year2022.Day3;
 
-public class Day3
+public class Day3Puzzle : BaseDayPuzzle
 {
-    private const string InputFileName = "Day3.txt";
     private readonly IDuplicateFinderService _duplicateFinderService;
     private readonly IInputFileService _inputFileService;
     private readonly IItemPriorityService _itemPriorityService;
 
-    public Day3(IInputFileService inputFileService, IDuplicateFinderService duplicateFinderService,
-        IItemPriorityService itemPriorityService)
+    public Day3Puzzle(IInputFileService inputFileService, IDuplicateFinderService duplicateFinderService,
+        IItemPriorityService itemPriorityService) : base("Day3.txt", inputFileService)
     {
         _itemPriorityService = itemPriorityService;
         _inputFileService = inputFileService;
@@ -20,7 +20,7 @@ public class Day3
 
     public int GetBucketCommonPriorityTotal()
     {
-        var inputs = _inputFileService.GetInputs(InputFileName);
+        var inputs = GetInputs();
 
         var duplicates = inputs.Select(GetBucketDuplicates);
 
@@ -31,7 +31,7 @@ public class Day3
 
     public int GetGroupCommonPriorityTotal()
     {
-        var inputs = _inputFileService.GetInputs(InputFileName);
+        var inputs = GetInputs();
 
         var duplicates = GetGroupCommon(inputs.ToList());
 
