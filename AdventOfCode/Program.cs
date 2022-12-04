@@ -5,6 +5,8 @@ using AdventOfCode.Year2022.Day2;
 using AdventOfCode.Year2022.Day2.Services;
 using AdventOfCode.Year2022.Day3;
 using AdventOfCode.Year2022.Day3.Services;
+using AdventOfCode.Year2022.Day4;
+using AdventOfCode.Year2022.Day4.Services;
 
 IInputFileService inputFileService = new InputFileService();
 
@@ -44,3 +46,7 @@ var day3 = new Day3(new InputFileService(), new DuplicateFinderService(), new It
 
 Console.WriteLine($"Day 3 1/2: {day3.GetBucketCommonPriorityTotal()}");
 Console.WriteLine($"Day 3 2/2: {day3.GetGroupCommonPriorityTotal()}");
+
+var day4 = new Day4(new InputFileService(), new AssignmentPairGenerator(), new OverlapChecker());
+
+Console.WriteLine($"Day 4 1/2: {day4.GetTotalOverlappingAssignmentPairs()}");
