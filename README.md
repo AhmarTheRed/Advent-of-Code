@@ -6,10 +6,10 @@ This repo contains my solutions to the advent of code event. Learn more about ad
 
 | Day | Solution | Stars |
 | --- | --- | --- |
-| [Day 1](https://adventofcode.com/2022/day/1) | [Day 1 Solution](https://github.com/AhmarTheRed/Advent-of-Code/blob/main/AdventOfCode/Year2022/Day1/Day1Puzzle.cs) | :star: :star: |
-| [Day 2](https://adventofcode.com/2022/day/2) | [Day 2 Solution](https://github.com/AhmarTheRed/Advent-of-Code/blob/main/AdventOfCode/Year2022/Day2/Day2Puzzle.cs) | :star: :star: |
-| [Day 3](https://adventofcode.com/2022/day/3) | [Day 3 Solution](https://github.com/AhmarTheRed/Advent-of-Code/blob/main/AdventOfCode/Year2022/Day3/Day3Puzzle.cs) | :star: :star: |
-| [Day 4](https://adventofcode.com/2022/day/4) |  |  |
+| [Day 1](https://adventofcode.com/2022/day/1) | [Day 1 Solution](https://github.com/AhmarTheRed/Advent-of-Code/blob/main/AdventOfCode/Year2022/Day1/Day1.cs) | :star: :star: |
+| [Day 2](https://adventofcode.com/2022/day/2) | [Day 2 Solution](https://github.com/AhmarTheRed/Advent-of-Code/blob/main/AdventOfCode/Year2022/Day2/Day2.cs) | :star: :star: |
+| [Day 3](https://adventofcode.com/2022/day/3) | [Day 3 Solution](https://github.com/AhmarTheRed/Advent-of-Code/blob/main/AdventOfCode/Year2022/Day3/Day3.cs) | :star: :star: |
+| [Day 4](https://adventofcode.com/2022/day/4) | [Day 4 Solution](https://github.com/AhmarTheRed/Advent-of-Code/blob/main/AdventOfCode/Year2022/Day4/Day4.cs) | :star: :star: |
 | [Day 5](https://adventofcode.com/2022/day/5) |  |  |
 | [Day 6](https://adventofcode.com/2022/day/6) |  |  |
 | [Day 7](https://adventofcode.com/2022/day/7) |  |  |
