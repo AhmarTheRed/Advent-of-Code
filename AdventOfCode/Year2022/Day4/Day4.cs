@@ -1,6 +1,7 @@
 using AdventOfCode.Common.Interfaces;
 using AdventOfCode.Common.Models;
 using AdventOfCode.Year2022.Day4.Interfaces;
+using AdventOfCode.Year2022.Day4.Models;
 
 namespace AdventOfCode.Year2022.Day4;
 
@@ -16,12 +17,17 @@ public class Day4 : BaseDay
         _overlapChecker = overlapChecker;
     }
 
-    public int GetTotalOverlappingAssignmentPairs()
+    public int GetFullOverlappingAssignmentPairsTotal()
     {
-        var inputs = GetInputs();
-
-        return inputs
+        return GetInputs()
             .Select(i => _assignmentPairGenerator.GetAssignmentPair(i).ToList())
-            .Count(p => _overlapChecker.IsOverlap(p[0], p[1]));
+            .Count(p => _overlapChecker.CheckOverlap(p[0], p[1]) == OverlapType.Full);
+    }
+
+    public int GetAllOverlappingAssignmentPairsTotal()
+    {
+        return GetInputs()
+            .Select(i => _assignmentPairGenerator.GetAssignmentPair(i).ToList())
+            .Count(p => _overlapChecker.CheckOverlap(p[0], p[1]) != OverlapType.None);
     }
 }

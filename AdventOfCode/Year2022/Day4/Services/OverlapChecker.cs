@@ -5,9 +5,16 @@ namespace AdventOfCode.Year2022.Day4.Services;
 
 public class OverlapChecker : IOverlapChecker
 {
-    public bool IsOverlap(Assignment assignment1, Assignment assignment2)
+    public OverlapType CheckOverlap(Assignment assignment1, Assignment assignment2)
     {
-        return (assignment1.Start <= assignment2.Start && assignment1.End >= assignment2.End) ||
-               (assignment2.Start <= assignment1.Start && assignment2.End >= assignment1.End);
+        if ((assignment1.Start <= assignment2.Start && assignment2.End <= assignment1.End) ||
+            (assignment2.Start <= assignment1.Start && assignment1.End <= assignment2.End))
+            return OverlapType.Full;
+
+        if ((assignment1.Start <= assignment2.Start && assignment1.End >= assignment2.Start) ||
+            (assignment2.Start <= assignment1.Start && assignment2.End >= assignment1.Start))
+            return OverlapType.Partial;
+
+        return OverlapType.None;
     }
 }

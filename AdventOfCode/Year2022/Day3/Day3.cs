@@ -20,9 +20,7 @@ public class Day3 : BaseDay
 
     public int GetBucketCommonPriorityTotal()
     {
-        var inputs = GetInputs();
-
-        var duplicates = inputs.Select(GetBucketDuplicates);
+        var duplicates = GetInputs().Select(GetBucketDuplicates);
 
         return duplicates.SelectMany(d => d)
             .Select(_itemPriorityService.GetPriority)
@@ -31,9 +29,7 @@ public class Day3 : BaseDay
 
     public int GetGroupCommonPriorityTotal()
     {
-        var inputs = GetInputs();
-
-        var duplicates = GetGroupCommon(inputs.ToList());
+        var duplicates = GetGroupCommon(GetInputs().ToList());
 
         return duplicates.SelectMany(d => d)
             .Select(_itemPriorityService.GetPriority)

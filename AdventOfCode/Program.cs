@@ -49,4 +49,5 @@ Console.WriteLine($"Day 3 2/2: {day3.GetGroupCommonPriorityTotal()}");
 
 var day4 = new Day4(new InputFileService(), new AssignmentPairGenerator(), new OverlapChecker());
 
-Console.WriteLine($"Day 4 1/2: {day4.GetTotalOverlappingAssignmentPairs()}");
+Console.WriteLine($"Day 4 1/2: {day4.GetFullOverlappingAssignmentPairsTotal()}");
+Console.WriteLine($"Day 4 2/2: {day4.GetAllOverlappingAssignmentPairsTotal()}");

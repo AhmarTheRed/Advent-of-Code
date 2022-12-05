@@ -17,9 +17,7 @@ public class Day2 : BaseDay
 
     public int GetTotalScore()
     {
-        var inputs = GetInputs();
-
-        var rounds = inputs.Select(GetRound);
+        var rounds = GetInputs().Select(GetRound);
 
         return rounds.Sum(r => r.Score);
     }
