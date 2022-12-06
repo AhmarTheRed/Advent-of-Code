@@ -25,6 +25,10 @@
         <Content Include="Year2022\Inputs\Day4.txt">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+        <None Remove="Year2022\Inputs\Day5-skinny.txt"/>
+        <Content Include="Year2022\Inputs\Day5-skinny.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>

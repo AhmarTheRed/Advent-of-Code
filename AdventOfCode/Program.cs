@@ -7,6 +7,8 @@ using AdventOfCode.Year2022.Day3;
 using AdventOfCode.Year2022.Day3.Services;
 using AdventOfCode.Year2022.Day4;
 using AdventOfCode.Year2022.Day4.Services;
+using AdventOfCode.Year2022.Day5;
+using AdventOfCode.Year2022.Day5.Services;
 
 IInputFileService inputFileService = new InputFileService();
 
@@ -51,3 +53,29 @@ var day4 = new Day4(new InputFileService(), new AssignmentPairGenerator(), new O
 
 Console.WriteLine($"Day 4 1/2: {day4.GetFullOverlappingAssignmentPairsTotal()}");
 Console.WriteLine($"Day 4 2/2: {day4.GetAllOverlappingAssignmentPairsTotal()}");
+
+var day5FirstHalf = new Day5(new InputFileService(), new MoveGenerator(), new CrateMover9000(),
+    new[] {'H', 'L', 'R', 'F', 'B', 'C', 'J', 'M'},
+    new[] {'D', 'C', 'Z'},
+    new[] {'W', 'G', 'N', 'C', 'F', 'J', 'H'},
+    new[] {'B', 'S', 'T', 'M', 'D', 'J', 'P'},
+    new[] {'J', 'R', 'D', 'C', 'N'},
+    new[] {'Z', 'G', 'J', 'P', 'Q', 'D', 'L', 'W'},
+    new[] {'H', 'R', 'F', 'T', 'Z', 'P'},
+    new[] {'G', 'M', 'V', 'L'},
+    new[] {'J', 'R', 'Q', 'F', 'P', 'G', 'B', 'C'});
+
+Console.WriteLine($"Day 5 1/2: {day5FirstHalf.GetTopItems()}");
+
+var day5SecondHalf = new Day5(new InputFileService(), new MoveGenerator(), new CrateMover9001(),
+    new[] {'H', 'L', 'R', 'F', 'B', 'C', 'J', 'M'},
+    new[] {'D', 'C', 'Z'},
+    new[] {'W', 'G', 'N', 'C', 'F', 'J', 'H'},
+    new[] {'B', 'S', 'T', 'M', 'D', 'J', 'P'},
+    new[] {'J', 'R', 'D', 'C', 'N'},
+    new[] {'Z', 'G', 'J', 'P', 'Q', 'D', 'L', 'W'},
+    new[] {'H', 'R', 'F', 'T', 'Z', 'P'},
+    new[] {'G', 'M', 'V', 'L'},
+    new[] {'J', 'R', 'Q', 'F', 'P', 'G', 'B', 'C'});
+
+Console.WriteLine($"Day 5 2/2: {day5SecondHalf.GetTopItems()}");
