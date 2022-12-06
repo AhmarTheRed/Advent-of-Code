@@ -2,7 +2,7 @@ namespace AdventOfCode.Year2022.Day5.Models;
 
 public class Move
 {
-    public int From { get; set; }
-    public int To { get; set; }
-    public int Amount { get; set; }
+    public int From { get; init; }
+    public int To { get; init; }
+    public int Amount { get; init; }
 }
