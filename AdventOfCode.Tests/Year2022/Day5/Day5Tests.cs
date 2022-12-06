@@ -3,7 +3,7 @@ using AdventOfCode.Year2022.Day5.Models;
 
 namespace AdventOfCode.Tests.Year2022.Day5;
 
-public class Day5Tests : DayPuzzleTestsBase
+public class Day5Tests : DayTestsBase
 {
     private Mock<IMoveGenerator> MockMoveGenerator
     {

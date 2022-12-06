@@ -3,7 +3,7 @@ using AdventOfCode.Year2022.Day2.Models;
 
 namespace AdventOfCode.Tests.Year2022.Day2;
 
-public class Day2Tests : DayPuzzleTestsBase
+public class Day2Tests : DayTestsBase
 {
     protected override IEnumerable<string> TestInputs => new[] {"A Y", "B X", "C Z"};
 

@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode.Tests.Year2022.Day1;
 
-public class Day1Tests : DayPuzzleTestsBase
+public class Day1Tests : DayTestsBase
 {
     protected override IEnumerable<string> TestInputs => new[]
     {

@@ -1,6 +1,6 @@
 namespace AdventOfCode.Tests;
 
-public abstract class DayPuzzleTestsBase
+public abstract class DayTestsBase
 {
     protected abstract IEnumerable<string> TestInputs { get; }
 
