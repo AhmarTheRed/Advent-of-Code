@@ -9,6 +9,7 @@ using AdventOfCode.Year2022.Day4;
 using AdventOfCode.Year2022.Day4.Services;
 using AdventOfCode.Year2022.Day5;
 using AdventOfCode.Year2022.Day5.Services;
+using AdventOfCode.Year2022.Day6;
 
 IInputFileService inputFileService = new InputFileService();
 
@@ -79,3 +80,11 @@ var day5SecondHalf = new Day5(new InputFileService(), new MoveGenerator(), new C
     new[] {'J', 'R', 'Q', 'F', 'P', 'G', 'B', 'C'});
 
 Console.WriteLine($"Day 5 2/2: {day5SecondHalf.GetTopItems()}");
+
+var day6FirstHalf = new Day6(new InputFileService(), 4);
+
+Console.WriteLine($"Day 6 1/2: {day6FirstHalf.GetFirstMarkerStartIndex()}");
+
+var day6SecondHalf = new Day6(new InputFileService(), 14);
+
+Console.WriteLine($"Day 6 2/2: {day6SecondHalf.GetFirstMarkerStartIndex()}");
