@@ -11,7 +11,7 @@ This repo contains my solutions to the advent of code event. Learn more about ad
 | [Day 3](https://adventofcode.com/2022/day/3) | [Day 3 Solution](https://github.com/AhmarTheRed/Advent-of-Code/blob/main/AdventOfCode/Year2022/Day3/Day3.cs) | :star: :star: |
 | [Day 4](https://adventofcode.com/2022/day/4) | [Day 4 Solution](https://github.com/AhmarTheRed/Advent-of-Code/blob/main/AdventOfCode/Year2022/Day4/Day4.cs) | :star: :star: |
 | [Day 5](https://adventofcode.com/2022/day/5) | [Day 5 Solution](https://github.com/AhmarTheRed/Advent-of-Code/blob/main/AdventOfCode/Year2022/Day5/Day5.cs) | :star: :star: |
-| [Day 6](https://adventofcode.com/2022/day/6) |  |  |
+| [Day 6](https://adventofcode.com/2022/day/6) | [Day 6 Solution](https://github.com/AhmarTheRed/Advent-of-Code/blob/main/AdventOfCode/Year2022/Day6/Day6.cs) | :star: :star: |
 | [Day 7](https://adventofcode.com/2022/day/7) |  |  |
 | [Day 8](https://adventofcode.com/2022/day/8) |  |  |
 | [Day 9](https://adventofcode.com/2022/day/9) |  |  |
