@@ -10,6 +10,8 @@ using AdventOfCode.Year2022.Day4.Services;
 using AdventOfCode.Year2022.Day5;
 using AdventOfCode.Year2022.Day5.Services;
 using AdventOfCode.Year2022.Day6;
+using AdventOfCode.Year2022.Day7;
+using AdventOfCode.Year2022.Day7.Services;
 
 IInputFileService inputFileService = new InputFileService();
 
@@ -88,3 +90,9 @@ Console.WriteLine($"Day 6 1/2: {day6FirstHalf.GetFirstMarkerStartIndex()}");
 var day6SecondHalf = new Day6(new InputFileService(), 14);
 
 Console.WriteLine($"Day 6 2/2: {day6SecondHalf.GetFirstMarkerStartIndex()}");
+
+var day7FirstHalf = new Day7(new InputFileService(),
+    new ChangeDirectoryParser(new ListDirectoryParser(new DirectoryItemParser(new FileItemParser(null)))));
+
+Console.WriteLine($"Day 7 1/2: {day7FirstHalf.GetSumOf100KAndLessDirectories()}");
+Console.WriteLine($"Day 7 2/2: {day7FirstHalf.GetDirectoryToDelete(30000000)}");
