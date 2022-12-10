@@ -1,6 +1,7 @@
 ﻿using AdventOfCode.Common.Interfaces;
 using AdventOfCode.Common.Services;
 using AdventOfCode.Year2022.Day1;
+using AdventOfCode.Year2022.Day10;
 using AdventOfCode.Year2022.Day2;
 using AdventOfCode.Year2022.Day2.Services;
 using AdventOfCode.Year2022.Day3;
@@ -103,3 +104,8 @@ var day8 = new Day8(new InputFileService(), new ForestGenerator());
 
 Console.WriteLine($"Day 8 1/2: {day8.GetNumberOfVisibleTrees()}");
 Console.WriteLine($"Day 8 2/2: {day8.GetHighestScenicScore()}");
+
+var day10 = new Day10(new InputFileService());
+
+Console.WriteLine($"Day 10 1/2: {day10.GetSignalStrengthTotal()}");
+Console.WriteLine($"Day 10 2/2: {Environment.NewLine}{day10.GetCrtImage()}");
