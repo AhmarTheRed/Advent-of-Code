@@ -12,6 +12,8 @@ using AdventOfCode.Year2022.Day5.Services;
 using AdventOfCode.Year2022.Day6;
 using AdventOfCode.Year2022.Day7;
 using AdventOfCode.Year2022.Day7.Services;
+using AdventOfCode.Year2022.Day8;
+using AdventOfCode.Year2022.Day8.Services;
 
 IInputFileService inputFileService = new InputFileService();
 
@@ -91,8 +93,13 @@ var day6SecondHalf = new Day6(new InputFileService(), 14);
 
 Console.WriteLine($"Day 6 2/2: {day6SecondHalf.GetFirstMarkerStartIndex()}");
 
-var day7FirstHalf = new Day7(new InputFileService(),
+var day7 = new Day7(new InputFileService(),
     new ChangeDirectoryParser(new ListDirectoryParser(new DirectoryItemParser(new FileItemParser(null)))));
 
-Console.WriteLine($"Day 7 1/2: {day7FirstHalf.GetSumOf100KAndLessDirectories()}");
-Console.WriteLine($"Day 7 2/2: {day7FirstHalf.GetDirectoryToDelete(30000000)}");
+Console.WriteLine($"Day 7 1/2: {day7.GetSumOf100KAndLessDirectories()}");
+Console.WriteLine($"Day 7 2/2: {day7.GetDirectoryToDelete(30000000)}");
+
+var day8 = new Day8(new InputFileService(), new ForestGenerator());
+
+Console.WriteLine($"Day 8 1/2: {day8.GetNumberOfVisibleTrees()}");
+Console.WriteLine($"Day 8 2/2: {day8.GetHighestScenicScore()}");
